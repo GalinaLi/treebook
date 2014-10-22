@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020115519) do
+ActiveRecord::Schema.define(version: 20141022091205) do
 
   create_table "statuses", force: true do |t|
     t.text     "content"
@@ -23,9 +23,6 @@ ActiveRecord::Schema.define(version: 20141020115519) do
   add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "profile_name"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -38,6 +35,9 @@ ActiveRecord::Schema.define(version: 20141020115519) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "profile_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
